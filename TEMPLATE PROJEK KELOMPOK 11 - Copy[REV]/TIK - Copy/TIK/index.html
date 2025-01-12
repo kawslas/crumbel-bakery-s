@@ -86,10 +86,15 @@
           </div>
         </div>
         <div class="col-lg-4 offset-lg-2">
-          <div class="right-image">
-            <img src="assets/images/banner-image.jpg" alt="">
-            <span class="price">40rb</span>
-            <span class="offer">-40%</span>
+            <div class="right-image slider-container">
+              <div class="slider">
+              <img src="assets/images/delicious-cupcakes-assortment-with-glaze.jpg" alt="Image 1">
+              <img src="assets/images/vertical-shot-delicious-cupcakes-with-cream-cherries-top-books.jpg" alt="Image 2">
+              <img src="assets/images/colorful-delicious-cupcakes-with-frosting.jpg" alt="Image 3">
+            </div>
+              <span class="price">40rb</span>
+              <span class="offer">-40%</span>
+            </div>
           </div>
         </div>
       </div>
@@ -335,6 +340,18 @@
   <script src="assets/js/owl-carousel.js"></script>
   <script src="assets/js/counter.js"></script>
   <script src="assets/js/custom.js"></script>
-
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const slider = document.querySelector(".slider");
+      const slides = document.querySelectorAll(".slider img");
+      let index = 0;
+      const totalSlides = slides.length
+  
+      setInterval(() => {
+        index = (index + 1) % totalSlides; // Loop back to the start
+        slider.style.transform = `translateX(-${index * 33.33}%)`;
+      }, 3000); // Slide every 3 seconds
+    });
+  </script>
   </body>
 </html>
